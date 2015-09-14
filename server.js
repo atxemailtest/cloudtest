@@ -25,7 +25,9 @@ var passport = passport();
 app.listen(5000);
 
 // Log the server status to the console
+console.log('===============================');
 console.log('Server running at port:5000/');
+console.log('===============================');
 
 // Use the module.exports property to expose our Express application instance for external usage
 module.exports = app;
@@ -48,4 +50,16 @@ zmqsocket.on('message', function(rid , tag, sid, msg_xml) {
 	zmqsocket.send(rid , zmq.ZMQ_SNDMORE);	
 	zmqsocket.send("ZMSG_SYSACK\0");
 			
+});
+
+//======================================
+
+
+var User = require('mongoose').model('User');
+
+User.find({},function(err,users){
+
+	if(err) throw err;
+
+	console.log(users);
 });

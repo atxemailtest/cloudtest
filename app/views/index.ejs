@@ -61,12 +61,20 @@
             <div class="panel-heading sharp">
               <h4 class="panel-title center">
                 <a data-toggle="collapse" data-parent="#accordion" href="#log-panel">
-                  <h5 class="text-center"><b>LOG</b></h5>
+                  <h5 class="text-center"><b>DEVICE MANAGEMENT</b></h5>
                 </a>
               </h4>
             </div>
 
             <div id="log-panel" class="panel-collapse collapse in">
+              <!-- Button -->
+              <div class="btn-group btn-group-justified">
+                <div class="btn-group" role="group">
+                  <button id= "NewDeviceTokenBtn" type="button" class="btn btn-info sharp">
+                  Generate Device Token</button>
+                </div>
+              </div>
+              <!--  -->
               <div class="panel-body">
                   <p>The log goes here. The log goes here. The log goes here. The log goes here. The log goes here.</p>
               </div>
@@ -78,6 +86,53 @@
 
 
 		    <h2>Hello <%=userFullName%> </h2>
+
+        <!-- Modal DeviceTokenDialog-->
+        <div class="modal fade Modal_Dialog" id="DeviceTokenDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <!-- Modal Header -->
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                  </button>
+                <h4 class="modal-title" id="myModalLabel">Device Token</h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+
+                  <form id="My_Formtoken">
+                    <div class="form-group">
+                      <label for="number_token_input"><b>Number of Tokens</b></label>
+                      <input type="number" min="1" max="255" class="form-control" id="number_token_input" placeholder="Please enter number of tokens" required></input>
+                    </div>
+                    <div class="form-group">
+                      <label for="token_list"><b>Tokens</b></label>
+                      <textarea id="token_list" readonly class="form-control" rows="8"></textarea>
+                    </div>
+                  </form>
+
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                  <div class="pull-left">
+                    <input id="GenerateTokenButton" type="button" class="btn btn-primary" value="Generate Tokens" form="My_Formtoken">
+                    <button type="button" class="btn btn-info" >Save to file</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+        <!-- Modal-->
+
+
+
+
 	   <% } else { %>
 
         <div class="header semidark-color">
@@ -93,6 +148,7 @@
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/client.js"></script>
 
     <!--BACKSTRETCH-->
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
