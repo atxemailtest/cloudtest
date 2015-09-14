@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <title><%= title %></title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!--End of CSS-->
+
+  </head>
+
+   <body>
+      <!-- If a user is authenticated, display the user's full name , otherwise display the authentication links -->
+	   <% if ( userFullName ) { %>
+        <div class="header semidark-color">
+          <img id="atx_logo" src="img/atxlogo_64.png" class="img-rounded" width="45">
+          <a class="logo"><b>DASHBOARD</b></a>
+          <a href="/signout" id="signout-button" class="btn btn-info btn-sm right-button">Sign out</a>
+        </div>
+
+        <div id="left-sidebar">
+          <div id="LeftNavPaneContainer" class="panel panel-primary">
+
+            <!-- Panel containing the TreeView-->
+            <div class="panel-heading sharp">
+              <h4 class="panel-title center">
+                <a data-toggle="collapse" data-parent="#accordion" href="#tree-panel">
+                  <h5 class="text-center"><b>DEVICE NAVIGATION PANE</b></h5>
+                </a>
+              </h4>
+            </div>
+
+            <div id="tree-panel" class="panel-collapse collapse in">
+
+              <!-- Button group -->
+              <div class="btn-group btn-group-justified">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-info sharp">Add Folder</button>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-info sharp">Add Device</button>
+                </div>
+              </div>
+              <!-- Button group -->
+
+              <div class="panel-body">
+                <!-- tree goes here -->
+              </div>
+  
+            </div>
+
+            <!-- End of Panel containing the TreeView-->
+
+            <!-- Panel containing the LOG-->
+            <div class="panel-heading sharp">
+              <h4 class="panel-title center">
+                <a data-toggle="collapse" data-parent="#accordion" href="#log-panel">
+                  <h5 class="text-center"><b>LOG</b></h5>
+                </a>
+              </h4>
+            </div>
+
+            <div id="log-panel" class="panel-collapse collapse in">
+              <div class="panel-body">
+                  <p>The log goes here. The log goes here. The log goes here. The log goes here. The log goes here.</p>
+              </div>
+            </div>
+            <!-- End of Panel containing the LOG-->
+
+          </div>
+        </div>
+
+
+		    <h2>Hello <%=userFullName%> </h2>
+	   <% } else { %>
+
+        <div class="header semidark-color">
+          <img id="atx_logo" src="img/atxlogo_64.png" class="img-rounded" width="45">
+          <a class="logo"><b>DASHBOARD</b></a>
+          <a href="/signup" id="signup-button" class="btn btn-info btn-sm right-button">Signup</a>
+          <a href="/signin" id="signin-button" class="btn btn-info btn-sm">Signin</a>
+        </div>
+
+	   <% } %>
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("img/gray-bk.jpg", {speed: 500});
+    </script>
+
+  </body>
+</html>

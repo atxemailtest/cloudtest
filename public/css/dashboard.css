@@ -1,0 +1,76 @@
+body {
+    background: #F2F2F2;
+    margin-top: 60px;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:13px;
+}
+
+.header {
+    min-height: 60px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    padding-right: 10px;
+    z-index: 100;
+}
+
+#atx_logo {
+    float : left;
+    margin-top: 7px;
+    margin-right: 10px;
+
+}
+
+#signin-button {
+    float : right;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+.right-button {
+    float : right;
+    margin-top: 15px;
+}
+
+.semidark-color {
+    background: #485563;
+}
+
+#left-sidebar {
+    margin: 0px;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 15%;
+    height: 100%;
+    background: #424A5D;
+}
+
+#right-sidebar {
+    margin: 0px;
+    position: fixed;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: #D1D2D4;
+    display: inline;
+}
+
+#webview {
+    padding-left: 18%;
+    width: 65%;
+    background: #1BA0E1;
+    display: inline;
+}
+
+#tree-panel {
+    height: 500px;
+}
+
+.sharp {
+    border-radius: 0px;
+}
+
+
